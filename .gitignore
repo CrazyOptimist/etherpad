@@ -1,5 +1,2 @@
-# data files
-db_data/
-
 # env file
 .env
