@@ -4,7 +4,7 @@ services:
     container_name: etherpad
     image: etherpad/etherpad
     environment: 
-      # - ADMIN_PASSWORD=${ADMIN_PASSWORD}  # admin user : "admin"
+      - ADMIN_PASSWORD=${ADMIN_PASSWORD}  # admin user : "admin"
       # - DB_TYPE=postgres
       # - DB_HOST=db
       # - DB_PORT=5432  # default port of postgre image
@@ -14,7 +14,7 @@ services:
     ports: 
       - "${HOST_PORT}:9001"
     volumes: 
-      - ./app_data:/opt/etherpad-lite/var
+      - etherpad_data:/opt/etherpad-lite/var
     # depends_on: 
     #   - db
     restart: always
@@ -29,5 +29,9 @@ services:
   #   # ports: 
   #   #   - "54320:5432"
   #   volumes: 
-  #     - ./db_data:/var/lib/postgresql/data
+  #     - db_data:/var/lib/postgresql/data
   #   restart: always
+
+volumes: 
+  etherpad_data:
+  # db_data:
