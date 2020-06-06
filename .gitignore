@@ -1,0 +1,6 @@
+# data files
+app_data/
+db_data/
+
+# env file
+.env
